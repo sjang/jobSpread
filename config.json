@@ -1,0 +1,20 @@
+{
+  "serverPort": "1323",
+  "redisServer": ["172.21.112.167:7000", "172.21.112.167:7001", "172.21.112.167:7002"],
+  "logConfig": {
+    "LogDir":"/Users/sjang/music2018/sources/GOGO/jobSpread/",
+    "LogFilename": "meta_job.log",
+    "BackupDir": "/Users/sjang/music2018/sources/GOGO/jobSpread/backup/",
+    "LogFilenameFormat": ".%Y%m%d"
+  },
+  "db": {
+    "dbmsName": "mysql",
+    "serverHost": "127.0.0.1",
+    "serverPort": "3306",
+    "username": "testuser",
+    "password": "testuserpw",
+    "dbName": "testuser",
+    "maxIdleConns": 20,
+    "maxOpenConns": 100
+  }
+}
