@@ -1,8 +1,11 @@
 module jobSpread
 
 require (
+	github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/fastly/go-utils v0.0.0-20180712184237-d95a45783239 // indirect
+	github.com/go-openapi/jsonreference v0.18.0 // indirect
+	github.com/go-openapi/spec v0.18.0 // indirect
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869 // indirect
 	github.com/jmoiron/sqlx v1.2.0
@@ -17,10 +20,15 @@ require (
 	github.com/mediocregopher/radix/v3 v3.1.0
 	github.com/pkg/errors v0.8.0 // indirect
 	github.com/sirupsen/logrus v1.2.0
+	github.com/swaggo/echo-swagger v0.0.0-20180315045949-97f46bb9e5a5
+	github.com/swaggo/files v0.0.0-20180215091130-49c8a91ea3fa // indirect
+	github.com/swaggo/gin-swagger v1.0.0 // indirect
+	github.com/swaggo/swag v1.4.0
 	github.com/tebeka/strftime v0.0.0-20140926081919-3f9c7761e312 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v0.0.0-20170224212429-dcecefd839c4 // indirect
 	golang.org/x/crypto v0.0.0-20181203042331-505ab145d0a9 // indirect
 	golang.org/x/sys v0.0.0-20181221143128-b4a75ba826a6 // indirect
+	golang.org/x/tools v0.0.0-20190103205943-8a6051197512 // indirect
 	google.golang.org/appengine v1.4.0 // indirect
 )

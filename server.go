@@ -6,7 +6,7 @@ import (
   "fmt"
   "github.com/jmoiron/sqlx"
   "github.com/labstack/echo"
-  _  "github.com/labstack/echo/middleware"
+  _ "github.com/labstack/echo/middleware"
   _ "github.com/labstack/gommon/log"
   "github.com/mediocregopher/radix/v3"
   "github.com/sirupsen/logrus"
@@ -14,11 +14,12 @@ import (
   "jobSpread/db"
   "jobSpread/ext"
   "jobSpread/jobs"
+  "jobSpread/logging"
   "jobSpread/work"
   "net/http"
   "os"
-  _ "os"
-  "jobSpread/logging"
+  "github.com/swaggo/echo-swagger"
+  _ "github.com/swaggo/echo-swagger/example/docs"
 )
 
 var MyEcho *echo.Echo
@@ -53,8 +54,6 @@ func init() {
   logging.InitLog(cf)
   log = logging.Log()
 
-  // init database
-  // initDB(cf)
 }
 
 func main() {
@@ -65,6 +64,9 @@ func main() {
 
   // echo init
   MyEcho = echo.New()
+
+  // for swagger
+  MyEcho.GET("/swagger/*", echoSwagger.WrapHandler)
 
   // route
   dispatchers(MyEcho)
@@ -121,12 +123,6 @@ func initConfig () {
   }
 
   cf = config.Conf()
-  // conf test
-  //fmt.Println(cf.ServerPort)
-  //fmt.Println(cf.LogConfig.LogDir)
-  //fmt.Println(cf.LogConfig.LogFilename)
-  //fmt.Println(cf.DB.ServerHost)
-  //fmt.Println(cf.DB.ServerPort)
 }
 
 func initDB(cf *config.Config) {
@@ -135,7 +131,7 @@ func initDB(cf *config.Config) {
 }
 
 
-
+// for making test data
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 func setTrackData() {
   cluster := ext.RedisCluster()
@@ -157,6 +153,8 @@ func setTrackData() {
   }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// comment
 
 
 /*
